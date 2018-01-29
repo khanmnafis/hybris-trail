@@ -23,5 +23,8 @@
     <extension name='droolsruleengineservices' />
     <extension name='promotionenginesamplesaddon' />
     <extension name="promotionenginetrail" />
+<!--    <extension name="checkboxconfiguratortemplateservices"/>
+    <extension name="checkboxconfiguratortemplatefacades"/>
+    <extension name="checkboxconfiguratortemplateaddon"/>-->
   </extensions>
 </hybrisconfig>

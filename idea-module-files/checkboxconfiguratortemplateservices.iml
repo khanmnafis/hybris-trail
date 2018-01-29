@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="OOTB" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices">
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/backoffice/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/backoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/web/webroot/WEB-INF/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../checkboxconfiguratortemplateservices/lib" recursive="true" />
+      </library>
+    </orderEntry>
+  </component>
+</module>
