@@ -79,7 +79,8 @@
 	      	            !execution(* getPK(..))" />  	            
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />	
 	  -->
-	
-			
-			
+
+	<bean id="checkboxConfigurationHandler" class="de.hybris.platform.checkboxconfiguratortemplateservices.order.hook.CheckboxConfigurationHandler"/>
+
+
 </beans>
