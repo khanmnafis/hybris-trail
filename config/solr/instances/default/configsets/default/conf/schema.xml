@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--
- Licensed to the Apache Software Foundation (ASF) under one or more
- contributor license agreements.  See the NOTICE file distributed with
- this work for additional information regarding copyright ownership.
- The ASF licenses this file to You under the Apache License, Version 2.0
- (the "License"); you may not use this file except in compliance with
- the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
 
 <!--  
  This is the Solr schema file. This file should be named "schema.xml" and
@@ -29,7 +13,7 @@
  http://wiki.apache.org/solr/SchemaXml
 -->
 
-<schema name="hybris" version="1.5">
+<schema name="hybris" version="6.6">
   <!-- attribute "name" is the name of this schema and is only used for display purposes.
        version="x.y" is Solr's version number for the schema syntax and 
        semantics.  It should not normally be changed by applications.
@@ -62,16 +46,10 @@
 			limits compression (if enabled in the derived fields) to values which
 			exceed a certain size (in characters).
 		-->
-		<fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true" />
 
 		<!-- boolean type: "true" or "false" -->
-		<fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true" />
 		
 		<!--
 			Binary data type. The data should be sent/retrieved in as Base64
@@ -99,25 +77,13 @@
 			Default numeric field types. For faster range queries, consider the
 			tint/tfloat/tlong/tdouble types.
 		-->
-		<fieldType name="int" class="solr.TrieIntField" precisionStep="0" omitNorms="true" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="int" class="solr.TrieIntField" precisionStep="0" omitNorms="true" positionIncrementGap="0" />
 		
-		<fieldType name="float" class="solr.TrieFloatField" precisionStep="0" omitNorms="true" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="float" class="solr.TrieFloatField" precisionStep="0" omitNorms="true" positionIncrementGap="0" />
 		
-		<fieldType name="long" class="solr.TrieLongField" precisionStep="0" omitNorms="true" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="long" class="solr.TrieLongField" precisionStep="0" omitNorms="true" positionIncrementGap="0" />
 		
-		<fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" omitNorms="true" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" omitNorms="true" positionIncrementGap="0" />
 
 		<!--
 			Numeric field types that index each value at various levels of
@@ -129,22 +95,10 @@
 			queries. A precisionStep of 0 disables indexing at different
 			precision levels.
 		-->
-		<fieldType name="tint" class="solr.TrieIntField" precisionStep="8" omitNorms="true" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
-		<fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" omitNorms="true" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
-		<fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" omitNorms="true" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
-		<fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" omitNorms="true" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="tint" class="solr.TrieIntField" precisionStep="8" omitNorms="true" positionIncrementGap="0" />
+		<fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" omitNorms="true" positionIncrementGap="0" />
+		<fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" omitNorms="true" positionIncrementGap="0" />
+		<fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" omitNorms="true" positionIncrementGap="0" />
 
 		<!--
 			The format for this date field is of the form 1995-12-31T23:59:59Z,
@@ -160,19 +114,13 @@
 			javadocs for more information. Note: For faster range queries,
 			consider the tdate type
 		-->
-		<fieldType name="date" class="solr.TrieDateField" omitNorms="true" precisionStep="0" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="date" class="solr.TrieDateField" omitNorms="true" precisionStep="0" positionIncrementGap="0" />
 
 		<!--
 			A Trie based date field for faster date range queries and date
 			faceting.
 		-->
-		<fieldType name="tdate" class="solr.TrieDateField" omitNorms="true" precisionStep="6" positionIncrementGap="0">
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
-		</fieldType>
+		<fieldType name="tdate" class="solr.TrieDateField" omitNorms="true" precisionStep="6" positionIncrementGap="0" />
 
 		<!--
 			The "RandomSortField" is not used to store or search any data. You
@@ -226,8 +174,6 @@
 				<tokenizer class="solr.KeywordTokenizerFactory" />
 				<filter class="solr.TrimFilterFactory" />
 			</analyzer>
-			<!-- Disable TF/IDF scoring for string fields so we can use them for boosting -->
-			<similarity class="de.hybris.platform.lucene.search.similarities.FixedTFIDFSimilarityFactory" />
 		</fieldType>
 
 		<!--
@@ -240,8 +186,8 @@
 		<fieldType name="text" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
 				<filter class="solr.WordDelimiterFilterFactory"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
 					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" preserveOriginal="1"/>
@@ -256,8 +202,8 @@
 		<fieldType name="textgen" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
-				<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
 				<filter class="solr.WordDelimiterFilterFactory"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
 					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" preserveOriginal="1"/>
@@ -283,10 +229,10 @@
 				<tokenizer class="solr.StandardTokenizerFactory" />
 				<filter class="solr.PatternReplaceFilterFactory" pattern="(['’])" replacement=" " />
 				<filter class="solr.EnglishMinimalStemFilterFactory" />
-				<filter class="solr.StopFilterFactory" words="lang/stopwords_en.txt" ignoreCase="true" />
-				<filter class="solr.ManagedStopFilterFactory" managed="en" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="en" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="en" />
 				<filter class="solr.LowerCaseFilterFactory" />
 				<filter class="solr.TrimFilterFactory" />
 				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
@@ -297,10 +243,10 @@
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
 				<filter class="solr.GermanLightStemFilterFactory" />
-				<filter class="solr.StopFilterFactory" words="lang/stopwords_de.txt" ignoreCase="true" />
-				<filter class="solr.ManagedStopFilterFactory" managed="de" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="de" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_de.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="de" />
 				<filter class="solr.LowerCaseFilterFactory" />
 				<filter class="solr.TrimFilterFactory" />
 				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
@@ -311,10 +257,10 @@
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
 				<filter class="solr.FrenchMinimalStemFilterFactory" />
-				<filter class="solr.StopFilterFactory" words="lang/stopwords_fr.txt" ignoreCase="true" />
-				<filter class="solr.ManagedStopFilterFactory" managed="fr" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="fr" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fr.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="fr" />
 				<filter class="solr.LowerCaseFilterFactory" />
 				<filter class="solr.TrimFilterFactory" />
 				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
@@ -325,10 +271,10 @@
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
 				<filter class="solr.PortugueseMinimalStemFilterFactory" />
-				<filter class="solr.StopFilterFactory" words="lang/stopwords_pt.txt" ignoreCase="true" />
-				<filter class="solr.ManagedStopFilterFactory" managed="pt" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="pt" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_pt.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="pt" />
 				<filter class="solr.LowerCaseFilterFactory" />
 				<filter class="solr.TrimFilterFactory" />
 				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
@@ -340,10 +286,10 @@
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
 				<filter class="solr.ItalianLightStemFilterFactory" />
-				<filter class="solr.StopFilterFactory" words="lang/stopwords_it.txt" ignoreCase="true" />
-				<filter class="solr.ManagedStopFilterFactory" managed="it" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="it" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_it.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="it" />
 				<filter class="solr.LowerCaseFilterFactory" />
 				<filter class="solr.TrimFilterFactory" />
 				<filter class="solr.RemoveDuplicatesTokenFilterFactory" />
@@ -353,10 +299,10 @@
 		<fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
-				<filter class="solr.StopFilterFactory" words="lang/stopwords_en.txt" ignoreCase="true" />
-				<filter class="solr.ManagedStopFilterFactory" managed="en" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="en" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="en" />
 				<filter class="solr.WordDelimiterFilterFactory"  preserveOriginal="1"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
 					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
@@ -369,10 +315,10 @@
 		<fieldType name="text_de" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
-				<filter class="solr.StopFilterFactory" words="lang/stopwords_de.txt" ignoreCase="true" />
-				<filter class="solr.ManagedStopFilterFactory" managed="de" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="de" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_de.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="de" />
 				<filter class="solr.WordDelimiterFilterFactory"  preserveOriginal="1"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
 					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
@@ -385,10 +331,10 @@
 		<fieldType name="text_fr" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
-				<filter class="solr.StopFilterFactory" words="lang/stopwords_fr.txt" ignoreCase="true" />
-				<filter class="solr.ManagedStopFilterFactory" managed="fr" />
 				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="fr" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_fr.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="fr" />
 				<filter class="solr.WordDelimiterFilterFactory"  preserveOriginal="1"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
 					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
@@ -435,12 +381,10 @@
 	        <!-- Normalizes full-width romaji to half-width and half-width kana to full-width (Unicode NFKC subset) -->
 	        <filter class="solr.CJKWidthFilterFactory"/>
             <!-- Removes common tokens typically not useful for search, but have a negative effect on ranking -->
-	        <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ja.txt" />
-            <!-- Manged Stop Word Filter -->
-			<filter class="solr.ManagedStopFilterFactory" managed="ja" />
  			<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
-            <!-- Managed Synonym Filter -->
 			<filter class="solr.ManagedSynonymFilterFactory" managed="ja" />
+	        <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ja.txt" />
+			<filter class="solr.ManagedStopFilterFactory" managed="ja" />
 	        <!-- Normalizes common katakana spelling variations by removing any last long sound character (U+30FC) -->
 	        <filter class="solr.JapaneseKatakanaStemFilterFactory" minimumLength="4"/>
 	        <!-- Lower-cases romaji characters -->
@@ -463,11 +407,10 @@
 		<fieldType name="text_pt" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
-
-	        	<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_pt.txt" />
-				<filter class="solr.ManagedStopFilterFactory" managed="pt" />
  				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="pt" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_pt.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="pt" />
 				<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="1"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
 					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
@@ -480,10 +423,10 @@
 		<fieldType name="text_it" class="solr.TextField" positionIncrementGap="100">
 			<analyzer>
 				<tokenizer class="solr.StandardTokenizerFactory" />
-    	    	<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_it.txt" />
-				<filter class="solr.ManagedStopFilterFactory" managed="it" />
  				<filter class="solr.SynonymFilterFactory" ignoreCase="true" synonyms="synonyms.txt"/>
 				<filter class="solr.ManagedSynonymFilterFactory" managed="it" />
+				<filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_it.txt" />
+				<filter class="solr.ManagedStopFilterFactory" managed="it" />
 				<filter class="solr.WordDelimiterFilterFactory" preserveOriginal="1"
 					generateWordParts="1" generateNumberParts="1" catenateWords="1"
 					catenateNumbers="1" catenateAll="0" splitOnCaseChange="1" />
@@ -567,6 +510,7 @@
 		<field name="text" type="textgen" indexed="true" stored="true" />
         <field name="_version_" type="long" indexed="true" stored="true" multiValued="false" />
         <field name="code_string" type="string" indexed="true" stored="true" multiValued="false" />
+        <field name="indexOperationId" type="long" indexed="true" stored="true" multiValued="false" />
         
         <field name="autosuggest" type="text_spell" indexed="true" stored="true" multiValued="true" />
 		<field name="autosuggest_de" type="text_spell_de" indexed="true" stored="true" multiValued="true" />
@@ -680,13 +624,4 @@
 		field is marked with required="false", it will be a required field
 	-->
 	<uniqueKey>id</uniqueKey>
-
-	<!--
-		field for the QueryParser to use when an explicit fieldname is absent
-	-->
-	<defaultSearchField>text</defaultSearchField>
-
-	<!-- SolrQueryParser configuration: defaultOperator="AND|OR" -->
-	<solrQueryParser defaultOperator="OR" />
-
 </schema>

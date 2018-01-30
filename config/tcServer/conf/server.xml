@@ -88,8 +88,8 @@
 					secure="true" 
 					clientAuth="false"            
    				sslProtocol = "TLS" 
-   				keystoreFile="${catalina.base}/lib/keystore"              
-   				keystorePass="123456"  
+   				keystoreFile="${tomcat.ssl.keystore.path}"
+   				keystorePass="${tomcat.ssl.keystore.password}"
                 />
 
  	<!--

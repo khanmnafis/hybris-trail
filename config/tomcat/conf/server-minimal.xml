@@ -58,7 +58,8 @@
                acceptCount="100"
                connectionTimeout="20000" 
                URIEncoding="UTF-8"
-               disableUploadTimeout="true" />
+               disableUploadTimeout="true"
+               redirectPort="${tomcat.ssl.port}" />
 
     <Connector port="${tomcat.ssl.port}" 
     				maxHttpHeaderSize="8192"
@@ -75,8 +76,8 @@
 					secure="true" 
 					clientAuth="false"            
    				sslProtocol = "TLS" 
-   				keystoreFile="${catalina.home}/lib/keystore"              
-   				keystorePass="123456"  
+   				keystoreFile="${tomcat.ssl.keystore.path}"
+   				keystorePass="${tomcat.ssl.keystore.password}"
                 />
     <!--
     This might evaluate into 
@@ -100,7 +101,10 @@
 		       	autoDeploy="false"   
        			xmlValidation="false" 
        			xmlNamespaceAware="false">
-
+       			
+		        <Valve className="org.apache.catalina.valves.ErrorReportValve" 
+		               showReport="${tomcat.errorReport.showReport}" 
+		               showServerInfo="${tomcat.errorReport.showServerInfo}"/>
 			<!-- Minimal configuration of the back office web applications allowing to administrate system while it is not initialized or not uptodate -->
 					
 			${tomcat.minimal.webapps}
